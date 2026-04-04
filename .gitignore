@@ -1,0 +1,19 @@
+data/
+
+# Model artifacts
+outputs/models/
+*.joblib
+*.pkl
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Archives
+*.zip
+
+# CSV files outside of tracked locations
+*.csv
