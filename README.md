@@ -259,6 +259,57 @@ Std Dev:    $6,911.92   (high variance)
 - Top 10% of customers contribute disproportionate value
 - CLV-based segmentation enables targeted retention strategies
 
+### Key Business Insight: The Churn-CLV Paradox
+
+**Discovery**: Customer segmentation analysis combining both models revealed **ZERO customers** with both high churn risk (≥70%) AND high CLV (≥$8,000).
+
+#### Why This Inverse Relationship Exists
+
+This paradox is fundamental to the insurance business model:
+- **High CLV requires 10+ year customer tenure** (CLV = premium × tenure × retention)
+- **Long tenure inherently means low churn probability** (loyal, established customers)
+- **New customers (<1 year) have high churn risk but minimal CLV** (haven't generated value yet)
+
+The business doesn't have a "save the whales" problem – there are no high-value customers at immediate churn risk.
+
+#### Portfolio Health Indicators
+
+| Segment | Customer Count | % of Portfolio | Avg Churn Prob | Avg Predicted CLV | Avg Actual CLV | Actual Churn Rate |
+|---------|---------------|----------------|----------------|-------------------|----------------|-------------------|
+| **⭐ Champions** (Low Churn, High CLV) | 34,081 | 50.7% | 36.32% | $14,991.70 | $15,019.02 | 6.98% |
+| **✓ Stable** (Low Churn, Low CLV) | 25,337 | 37.7% | 38.26% | $4,469.24 | $4,433.84 | 8.15% |
+| **⚠️ At-Risk** (High Churn, Low CLV) | 7,819 | 11.6% | 84.22% | $413.84 | $394.53 | 41.49% |
+| **🚨 Critical** (High Churn, High CLV) | 0 | 0.0% | N/A | N/A | N/A | N/A |
+
+**Portfolio Analysis**:
+- **88.4% of customers** are in healthy segments (Champions + Stable)
+- **Champions segment** contributes majority of revenue with excellent retention (7% churn)
+- **At-Risk segment** (11.6%) consists almost entirely of new customers who churn in year 1
+
+#### Strategic Implication: Shift from Rescue to Prevention
+
+**Traditional Approach** ❌:
+- Expensive retention campaigns targeting high-value churners
+- "Save the whales" mentality
+- Reactive intervention when customers show exit signals
+
+**Data-Driven Approach** ✅:
+- **Focus retention efforts on first-year onboarding and engagement**
+- Convert new customers (high churn risk) into long-term Champions
+- The critical window is months 1-12, not year 10+
+- Prevention costs << Rescue costs
+
+**Business Action Plan**:
+1. **First 90 Days**: Intensive onboarding program for new customers
+2. **Months 3-12**: Engagement campaigns to build habit and loyalty
+3. **Year 2+**: Maintain satisfaction (already low churn, high value)
+4. **Do NOT**: Waste budget on rescue campaigns for already-loyal Champions
+
+**ROI Impact**:
+- At-Risk segment: 7,819 customers × $414 avg CLV = **$3.2M at risk**
+- Champions segment: 34,081 customers × $14,992 avg CLV = **$511M stable base**
+- **Focus 80% of retention budget on the 11.6% at-risk new customers**
+
 ---
 
 ## 🔬 Explainability Approach

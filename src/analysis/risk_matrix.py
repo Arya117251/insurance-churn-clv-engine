@@ -88,11 +88,11 @@ print(f"+ CLV predictions generated")
 
 # Define thresholds
 CHURN_THRESHOLD = 0.70  # Optimal threshold from churn model
-CLV_THRESHOLD = 800     # Relative high CLV among at-risk customers
+CLV_THRESHOLD = 8000    # High CLV threshold for strategic segmentation
 
 print(f"\nSegmentation Thresholds:")
 print(f"  Churn Risk: {CHURN_THRESHOLD} (optimal F1 threshold)")
-print(f"  CLV: ${CLV_THRESHOLD:,} (relative high among at-risk)")
+print(f"  CLV: ${CLV_THRESHOLD:,} (strategic high-value threshold)")
 
 # Create segments
 segments = []
