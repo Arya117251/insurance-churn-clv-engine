@@ -103,6 +103,11 @@ def create_behavioral_features(df: pd.DataFrame) -> pd.DataFrame:
         (df['premium_to_income_ratio'] > 0.1).astype(int)
     )
 
+    df['risk_score_clean'] = (
+        (df['good_credit'] == 0).astype(int) +
+        (df['premium_to_income_ratio'] > 0.1).astype(int)
+    )
+
     return df
 
 
@@ -217,7 +222,7 @@ def main():
         'tenure_years', 'tenure_bucket', 'is_new_customer',
         'income_midpoint', 'hmv_midpoint', 'premium_to_income_ratio',
         'premium_per_tenure_year', 'wealth_index', 'is_suspended',
-        'risk_score', 'age_bucket', 'life_stage', 'stability_score',
+        'risk_score', 'risk_score_clean', 'age_bucket', 'life_stage', 'stability_score',
         'state_churn_rate', 'simple_clv'
     ]
 
