@@ -2,7 +2,7 @@ import os
 import json
 import requests
 from dotenv import load_dotenv
-from src.advisor.llm_client import LLMClient
+from .llm_client import LLMClient
 
 # Load environment variables from .env file
 load_dotenv()

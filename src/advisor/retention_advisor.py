@@ -1,4 +1,4 @@
-from src.advisor.gemini_client import GeminiClient
+from .gemini_client import GeminiClient
 
 
 def generate_retention_brief(

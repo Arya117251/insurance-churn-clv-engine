@@ -28,7 +28,7 @@ def main():
     print(f"Churn Risk: {churn_prob:.1%}")
     print(f"Predicted CLV: ${predicted_clv:,.2f}")
     print(f"Actual CLV: ${actual_clv:,.2f}")
-    print("\nCalling Gemini 1.5 Flash API...\n")
+    print("\nCalling Gemini 2.5 Flash API...\n")
     print("=" * 80)
 
     # Generate retention brief
