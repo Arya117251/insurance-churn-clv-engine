@@ -19,7 +19,7 @@ class GeminiClient(LLMClient):
                 "GEMINI_API_KEY environment variable not set. "
                 "Please set it with your Google AI Studio API key."
             )
-        self.base_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+        self.base_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent"
 
     def generate_brief(self, prompt: str) -> str:
         """
