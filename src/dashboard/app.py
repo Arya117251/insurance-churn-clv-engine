@@ -156,8 +156,8 @@ st.markdown("""
 
 # Feature data initialization
 def ensure_features_exist():
-    """Generate model_ready_features.csv if it doesn't exist"""
-    feature_path = "data/features/model_ready_features.csv"
+    """Generate model_ready_features_sample.csv if it doesn't exist"""
+    feature_path = "data/features/model_ready_features_sample.csv"
     if not os.path.exists(feature_path):
         st.warning("⏳ Generating feature data for first-time setup... This may take 2-3 minutes.")
         try:
@@ -372,7 +372,7 @@ elif page == "Customer Analysis":
 
             # Recreate feature names with EXACT same preprocessing as training
             # Load a sample to get the full column structure
-            mapping_df = pd.read_csv("data/features/model_ready_features.csv", nrows=10000)
+            mapping_df = pd.read_csv("data/features/model_ready_features_sample.csv", nrows=10000)
 
             # Step 1: Use EXACT categorical columns from training
             # (Hardcoded to match train_churn.py output)
@@ -546,7 +546,7 @@ elif page == "Customer Analysis":
                     st.stop()
 
                 # Load customer features
-                features_df = pd.read_csv("data/features/model_ready_features.csv")
+                features_df = pd.read_csv("data/features/model_ready_features_sample.csv")
 
                 # Check if customer exists
                 if float(display_customer_id) not in features_df['individual_id'].values:
