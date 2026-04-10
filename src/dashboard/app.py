@@ -164,7 +164,19 @@ def ensure_features_exist():
             # Create directories if they don't exist
             os.makedirs("data/features", exist_ok=True)
             # Run feature engineering script
-            subprocess.run(["python", "src/features/engineer_features.py"], check=True)
+            result = subprocess.run(
+                ["python", "src/features/engineer_features.py"],
+                capture_output=True,
+                text=True,
+                check=False
+            )
+
+            if result.returncode != 0:
+                st.error(f"❌ Feature generation failed!")
+                st.code(result.stderr, language="text")
+                st.code(result.stdout, language="text")
+                st.stop()
+
             st.success("✅ Features generated!")
         except Exception as e:
             st.error(f"❌ Failed to generate features: {e}")
