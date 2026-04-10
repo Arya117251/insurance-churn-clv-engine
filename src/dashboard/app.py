@@ -6,7 +6,6 @@ import joblib
 import shap
 import numpy as np
 import sys
-import subprocess
 from pathlib import Path
 
 # Add project root to Python path
@@ -153,39 +152,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
-# Feature data initialization
-def ensure_features_exist():
-    """Generate model_ready_features_sample.csv if it doesn't exist"""
-    feature_path = "data/features/model_ready_features_sample.csv"
-    if not os.path.exists(feature_path):
-        st.warning("⏳ Generating feature data for first-time setup... This may take 2-3 minutes.")
-        try:
-            # Create directories if they don't exist
-            os.makedirs("data/features", exist_ok=True)
-            # Run feature engineering script
-            result = subprocess.run(
-                ["python", "src/features/engineer_features.py"],
-                capture_output=True,
-                text=True,
-                check=False
-            )
-
-            if result.returncode != 0:
-                st.error(f"❌ Feature generation failed!")
-                st.code(result.stderr, language="text")
-                st.code(result.stdout, language="text")
-                st.stop()
-
-            st.success("✅ Features generated!")
-        except Exception as e:
-            st.error(f"❌ Failed to generate features: {e}")
-            st.stop()
-
-# Call this before loading any data
-if 'features_initialized' not in st.session_state:
-    ensure_features_exist()
-    st.session_state['features_initialized'] = True
 
 # Sidebar navigation
 st.sidebar.title("📊 Navigation")
