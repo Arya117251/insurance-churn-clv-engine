@@ -17,3 +17,4 @@ __pycache__/
 
 # CSV files outside of tracked locations
 *.csv
+!outputs/analysis/customer_segments.csv
