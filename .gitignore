@@ -1,9 +1,11 @@
 data/
 
 # Model artifacts
-outputs/models/
+outputs/models/*
 *.joblib
 *.pkl
+!outputs/models/best_churn_model.pkl
+!outputs/models/best_clv_model.pkl
 
 # Python
 __pycache__/
